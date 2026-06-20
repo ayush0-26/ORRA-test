@@ -1,0 +1,9 @@
+.text-section{
+    max-width: 900px;
+    margin: auto;
+}
+
+.text-section p,
+.text-section div{
+    line-height: 1.8;
+}

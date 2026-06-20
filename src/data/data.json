@@ -1,0 +1,130 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Radiant Enameled Diamond Ring",
+      "price": "₹38,243",
+      "oldPrice": "₹43,616",
+      "img": "../assets/img1.jpg",
+      "badge": "BEST SELLER",
+      "makingCharges": "Making Charges @ ₹299/g"
+    },
+    {
+      "id": 2,
+      "title": "Brilliant Diamond Nosepin",
+      "price": "₹7,033",
+      "oldPrice": "₹7,912",
+      "img": "../assets/img2.jpg",
+      "badge": "BEST SELLER",
+      "makingCharges": "Making Charges @ ₹299/g"
+    },
+    {
+      "id": 3,
+      "title": "Regal Station Yellow Gold Diamond",
+      "price": "₹87,564",
+      "oldPrice": "₹1,00,621",
+      "img": "../assets/img3.jpg",
+      "badge": "MOST VIEWED",
+      "makingCharges": "Making Charges @ ₹299/g"
+    },
+    {
+      "id": 4,
+      "title": "Modern Delicate Finish Chain Necklace",
+      "price": "₹69,668",
+      "oldPrice": "₹79,810",
+      "img": "../assets/img4.jpg",
+      "badge": "BEST SELLER",
+      "makingCharges": "Making Charges @ ₹299/g"
+    },
+    {
+      "id": 5,
+      "title": "Elegant Diamond Bracelet",
+      "price": "₹45,999",
+      "oldPrice": "₹52,000",
+      "img": "../assets/img5.jpg",
+      "badge": "BEST SELLER",
+      "makingCharges": "Making Charges @ ₹299/g"
+    },
+    {
+      "id": 6,
+      "title": "Classic Diamond Earrings",
+      "price": "₹28,999",
+      "oldPrice": "₹35,000",
+      "img": "../assets/img6.jpg",
+      "badge": "MOST VIEWED",
+      "makingCharges": "Making Charges @ ₹299/g"
+    },
+    {
+      "id": 7,
+      "title": "Luxury Solitaire Diamond Ring",
+      "price": "₹1,06,080",
+      "oldPrice": "₹1,20,000",
+      "img": "../assets/img7.jpg",
+      "badge": "BEST SELLER",
+      "makingCharges": "Making Charges @ ₹299/g"
+    },
+    {
+      "id": 8,
+      "title": "Premium Diamond Ring",
+      "price": "₹96,500",
+      "oldPrice": "₹1,10,000",
+      "img": "../assets/img8.jpg",
+      "badge": "BEST SELLER",
+      "makingCharges": "Making Charges @ ₹299/g"
+    },
+    {
+      "id": 9,
+      "title": "Radiant Diamond Pendant",
+      "price": "₹82,000",
+      "oldPrice": "₹95,000",
+      "img": "../assets/img9.jpg",
+      "badge": "BEST SELLER",
+      "makingCharges": "Making Charges @ ₹299/g"
+    },
+    {
+      "id": 10,
+      "title": "Elegant Bridal Ring",
+      "price": "₹64,000",
+      "oldPrice": "₹72,000",
+      "img": "../assets/img10.jpg",
+      "badge": "BEST SELLER",
+      "makingCharges": "Making Charges @ ₹299/g"
+    },
+    {
+      "id": 11,
+      "title": "Classic Gold Earrings",
+      "price": "₹51,000",
+      "oldPrice": "₹60,000",
+      "img": "../assets/img11.jpg",
+      "badge": "MOST VIEWED",
+      "makingCharges": "Making Charges @ ₹299/g"
+    },
+    {
+      "id": 12,
+      "title": "Minimal Platinum Band",
+      "price": "₹76,000",
+      "oldPrice": "₹85,000",
+      "img": "../assets/img12.jpg",
+      "badge": "BEST SELLER",
+      "makingCharges": "Making Charges @ ₹299/g"
+    },
+    {
+      "id": 13,
+      "title": "Modern Necklace Set",
+      "price": "₹1,12,000",
+      "oldPrice": "₹1,30,000",
+      "img": "../assets/img13.jpg",
+      "badge": "BEST SELLER",
+      "makingCharges": "Making Charges @ ₹299/g"
+    },
+    {
+      "id": 14,
+      "title": "Diamond Statement Ring",
+      "price": "₹94,000",
+      "oldPrice": "₹1,05,000",
+      "img": "../assets/img14.jpg",
+      "badge": "MOST VIEWED",
+      "makingCharges": "Making Charges @ ₹299/g"
+    }
+  ]
+}

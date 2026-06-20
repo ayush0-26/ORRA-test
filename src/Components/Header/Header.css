@@ -1,0 +1,375 @@
+.top-header {
+  height: 115px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 70px
+}
+
+.logo {
+  width: 95px;
+  object-fit: contain
+}
+
+.search-box {
+  width: 47%;
+  height: 56px;
+  background: #fff;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 20px;
+  color: #111
+}
+
+.search-box input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  font-size: 18px
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  color: white;
+  font-size: 22px
+}
+
+.icons div {
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+
+.icons span {
+  font-size: 18px
+}
+
+.menu {
+  height: 55px;
+  background: white;
+  border-bottom: 1px solid #ddd
+}
+
+.menu .nav-link {
+  color: #111 !important;
+  font-size: 18px;
+  margin: 0 22px;
+  font-weight: 500
+}
+
+.mega-dropdown .dropdown-menu {
+  width: 1110px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 45px;
+  padding: 35px 50px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, .18)
+}
+
+.mega-menu h6 {
+  font-size: 18px;
+  font-weight: 700;
+    padding-bottom: 12px;
+  margin-bottom: 15px
+}
+
+.dropdown-item {
+  font-size: 16px;
+  color: #666;
+  padding: 9px 0
+}
+
+.dropdown-item:hover {
+  background: white;
+  color: #000
+}
+
+.mega-dropdown {
+  position: static !important;
+}
+
+.mega-dropdown .dropdown-menu {
+  width: 1100px;
+  max-width: 95%;
+  left: 50% !important;
+  transform: translateX(-50%);
+  border: 0;
+  border-radius: 0;
+  padding: 35px 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.mega-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+}
+
+.mega-menu h6 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+
+}
+
+@media (max-width: 991px) {
+  .top-header {
+    flex-direction: column;
+    height: auto;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .mega-dropdown .dropdown-menu {
+    width: 100%;
+    max-width: 100%;
+    left: 0 !important;
+    transform: none;
+    position: relative !important;
+  }
+}
+
+@media(max-width:991px) {
+
+  .top-header {
+    height: auto;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+
+  .logo {
+    width: 80px;
+  }
+
+
+  .search-box {
+    order: 3;
+    width: 100%;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+
+  .icons {
+    font-size: 18px;
+    gap: 15px;
+  }
+
+
+  .icons span {
+    display: none;
+  }
+
+
+  .menu {
+    height: auto;
+  }
+
+
+  .menu .container {
+    padding: 0 15px;
+  }
+
+
+  .menu .navbar-collapse {
+    background: white;
+    padding: 15px;
+  }
+
+
+  .menu .nav-link {
+    margin: 8px 0;
+    font-size: 17px;
+  }
+
+
+  .mega-dropdown {
+    position: relative !important;
+  }
+
+
+  .mega-dropdown .dropdown-menu {
+
+    position: static !important;
+
+    width: 100% !important;
+
+    max-width: 100%;
+
+    transform: none !important;
+
+    left: 0 !important;
+
+    padding: 15px !important;
+
+    box-shadow: none;
+
+    border: 1px solid #ddd;
+
+  }
+
+
+
+  .mega-menu .row {
+
+    display: block;
+
+  }
+
+
+
+  .mega-menu .col-md-3,
+  .mega-menu .col-md-4,
+  .mega-menu .col-md-6 {
+
+    width: 100%;
+
+    margin-bottom: 20px;
+
+  }
+
+
+  .mega-menu h6 {
+
+    font-size: 15px;
+
+  }
+
+
+  .dropdown-item {
+
+    font-size: 15px;
+
+  }
+
+
+
+}
+
+
+
+
+
+
+@media(max-width:576px) {
+
+
+  .top-header {
+
+    justify-content: center;
+
+  }
+
+
+  .logo {
+
+    width: 70px;
+
+  }
+
+
+  .icons {
+
+    width: 100%;
+
+    justify-content: center;
+
+  }
+
+
+  .search-box input {
+
+    font-size: 14px;
+
+  }
+
+
+  .menu .nav-link {
+
+    font-size: 16px;
+
+  }
+
+
+  .mega-dropdown .dropdown-menu {
+    max-height: 70vh;
+    overflow-y: auto;
+
+  }
+
+
+}
+/* 2 Column Mega Menu */
+
+.two-col-dropdown .dropdown-menu {
+  width: 750px;
+  left: 50% !important;
+  transform: translateX(-50%);
+  padding: 35px 45px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+
+
+.two-col-dropdown .mega-menu .row{
+  display:flex;
+}
+
+
+.two-col-dropdown .mega-menu .col-md-6{
+  width:50%;
+}
+
+
+.two-col-dropdown .mega-menu h6{
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:5px;
+}
+
+
+.two-col-dropdown .mega-menu hr{
+  margin:0 0 15px;
+  border:none;
+  border-top:1px solid #222;
+  opacity:1;
+}
+
+
+.two-col-dropdown .dropdown-item{
+  display:flex;
+  align-items:center;
+  font-size:16px;
+  padding:10px 0;
+}
+
+
+.two-col-dropdown .dropdown-item img{
+  width:22px;
+  height:22px;
+  margin-right:10px;
+}
