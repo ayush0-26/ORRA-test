@@ -3,145 +3,206 @@ import { Card, Form } from "react-bootstrap";
 import "./FilterSidebar.css";
 import { IoChevronUp, IoChevronDown } from "react-icons/io5";
 
-const FilterSidebar = () => {
-  const [jewellery, setJewellery] = useState(false);
-  const [product, setProduct] = useState(false);
-  const [price, setPrice] = useState(true);
-  const [purity, setPurity] = useState(true);
-  const [color, setColor] = useState(true);
-  const [style, setStyle] = useState(true);
-  const [occasion, setOccasion] = useState(true);
-  const [size, setSize] = useState(true);
+const jewelleryOptions = [
+  "Solitaire Jewellery",
+  "Diamond Jewellery",
+  "Platinum Jewellery",
+];
+
+const productOptions = [
+  "Bangle",
+  "Bracelet",
+  "Chain",
+  "Earring",
+  "Neckwear Set",
+  "Nosewear",
+  "Pendant",
+  "Ring",
+];
+
+const priceOptions = [
+  { id: "below-20000", label: "₹20000 - Below" },
+  { id: "20000-50000", label: "₹20000 - ₹50000" },
+  { id: "50000-75000", label: "₹50000 - ₹75000" },
+  { id: "75000-100000", label: "₹75000 - ₹100000" },
+  { id: "100000-200000", label: "₹100000 - ₹200000" },
+  { id: "200000-300000", label: "₹200000 - ₹300000" },
+];
+
+const purityOptions = ["14KT", "18KT", "22KT"];
+const colorOptions = ["Yellow Gold", "White Gold", "Rose Gold"];
+const styleOptions = ["Broad", "Bypass", "Casual", "Classic", "Contemporary", "Cuff", "Delicate", "Designer"];
+const occasionOptions = ["Anniversary", "Birthday", "Engagement", "Wedding"];
+const sizeOptions = ["6", "6.5", "7", "7.5", "8", "8.5" ,'9','9.5','10'];
+
+const FilterSidebar = ({ filters, onFilterChange }) => {
+  const [openSections, setOpenSections] = useState({
+    jewellery: true,
+    product: true,
+    price: true,
+    purity: true,
+    color: true,
+    style: true,
+    occasion: true,
+    size: true,
+  });
+
+  const toggleSection = (section) => {
+    setOpenSections((prev) => ({ ...prev, [section]: !prev[section] }));
+  };
+
+  const handleCheckbox = (key, value) => {
+    const selected = filters[key] || [];
+    const updated = selected.includes(value)
+      ? selected.filter((item) => item !== value)
+      : [...selected, value];
+    onFilterChange(key, updated);
+  };
 
   return (
-    <div className="filter-box p-5">
+    <div className="filter-box ">
       <h5>Filters</h5>
-      <Card>
-       
-        <h6 onClick={() => setJewellery(!jewellery)}>
+      <Card className="m-5">
+        <h6 onClick={() => toggleSection("jewellery")}> 
           Jewellery Type
-          <span>{jewellery ? <IoChevronUp /> : <IoChevronDown />}</span>
+          <span>{openSections.jewellery ? <IoChevronUp /> : <IoChevronDown />}</span>
         </h6>
-        {jewellery && (
+        {openSections.jewellery && (
           <>
-            <Form.Check label="Solitaire Jewellery (73)" />
-            <Form.Check label="Diamond Jewellery (3502)" />
-            <Form.Check label="Platinum Jewellery (74)" />
+            {jewelleryOptions.map((option) => (
+              <Form.Check
+                key={option}
+                label={option}
+                checked={filters.jewelleryTypes?.includes(option)}
+                onChange={() => handleCheckbox("jewelleryTypes", option)}
+              />
+            ))}
           </>
         )}
         <hr />
 
-        
-        <h6 onClick={() => setProduct(!product)}>
+        <h6 onClick={() => toggleSection("product")}> 
           Product Type
-          <span>{product ? <IoChevronUp /> : <IoChevronDown />}</span>
+          <span>{openSections.product ? <IoChevronUp /> : <IoChevronDown />}</span>
         </h6>
-        {product && (
+        {openSections.product && (
           <div className="scroll-box">
-            <Form.Check label="Bangle (174)" />
-            <Form.Check label="Bracelet (190)" />
-            <Form.Check label="Chain (1)" />
-            <Form.Check label="Earring (997)" />
-            <Form.Check label="Neckwear Set (354)" />
-            <Form.Check label="Nosewear (39)" />
-            <Form.Check label="Pendant (140)" />
-            <Form.Check label="Ring (200)" />
+            {productOptions.map((option) => (
+              <Form.Check
+                key={option}
+                label={option}
+                checked={filters.productTypes?.includes(option)}
+                onChange={() => handleCheckbox("productTypes", option)}
+              />
+            ))}
           </div>
         )}
         <hr />
 
-        
-        <h6 onClick={() => setPrice(!price)}>
+        <h6 onClick={() => toggleSection("price")}> 
           Price
-          <span>{price ? <IoChevronUp /> : <IoChevronDown />}</span>
+          <span>{openSections.price ? <IoChevronUp /> : <IoChevronDown />}</span>
         </h6>
-        {price && (
+        {openSections.price && (
           <div className="scroll-box">
-            <Form.Check label="₹20000 - Below (82)" />
-            <Form.Check label="₹20000 - ₹50000 (677)" />
-            <Form.Check label="₹50000 - ₹75000 (494)" />
-            <Form.Check label="₹75000 - ₹100000 (392)" />
-            <Form.Check label="₹100000 - ₹200000 (797)" />
-            <Form.Check label="₹200000 - ₹300000 (321)" />
+            {priceOptions.map((option) => (
+              <Form.Check
+                key={option.id}
+                label={option.label}
+                checked={filters.priceRanges?.includes(option.id)}
+                onChange={() => handleCheckbox("priceRanges", option.id)}
+              />
+            ))}
           </div>
         )}
         <hr />
 
-        
-        <h6 onClick={() => setPurity(!purity)}>
+        <h6 onClick={() => toggleSection("purity")}> 
           Metal Purity
-          <span>{purity ? <IoChevronUp /> : <IoChevronDown />}</span>
+          <span>{openSections.purity ? <IoChevronUp /> : <IoChevronDown />}</span>
         </h6>
-        {purity && (
+        {openSections.purity && (
           <>
-            <Form.Check label="14KT (1463)" />
-            <Form.Check label="18KT (2012)" />
-            <Form.Check label="22KT (500)" />
+            {purityOptions.map((option) => (
+              <Form.Check
+                key={option}
+                label={option}
+                checked={filters.purities?.includes(option)}
+                onChange={() => handleCheckbox("purities", option)}
+              />
+            ))}
           </>
         )}
         <hr />
 
-        
-        <h6 onClick={() => setColor(!color)}>
+        <h6 onClick={() => toggleSection("color")}> 
           Metal Color
-          <span>{color ? <IoChevronUp /> : <IoChevronDown />}</span>
+          <span>{openSections.color ? <IoChevronUp /> : <IoChevronDown />}</span>
         </h6>
-        {color && (
+        {openSections.color && (
           <>
-            <Form.Check label="Yellow Gold" />
-            <Form.Check label="White Gold" />
-            <Form.Check label="Rose Gold" />
+            {colorOptions.map((option) => (
+              <Form.Check
+                key={option}
+                label={option}
+                checked={filters.metalColors?.includes(option)}
+                onChange={() => handleCheckbox("metalColors", option)}
+              />
+            ))}
           </>
         )}
         <hr />
 
-       
-        <h6 onClick={() => setStyle(!style)}>
+        <h6 onClick={() => toggleSection("style")}> 
           Shop by Style
-          <span>{style ? <IoChevronUp /> : <IoChevronDown />}</span>
+          <span>{openSections.style ? <IoChevronUp /> : <IoChevronDown />}</span>
         </h6>
-        {style && (
+        {openSections.style && (
           <div className="scroll-box">
-            <Form.Check label="Broad (23)" />
-            <Form.Check label="Bypass (1)" />
-            <Form.Check label="Casual (12)" />
-            <Form.Check label="Classic (12)" />
-            <Form.Check label="Contemporary (12)" />
-            <Form.Check label="Cuff (12)" />
-            <Form.Check label="Delicate (12)" />
-            <Form.Check label="Designer (12)" />
+            {styleOptions.map((option) => (
+              <Form.Check
+                key={option}
+                label={option}
+                checked={filters.styles?.includes(option)}
+                onChange={() => handleCheckbox("styles", option)}
+              />
+            ))}
           </div>
         )}
         <hr />
 
-        
-        <h6 onClick={() => setOccasion(!occasion)}>
+        <h6 onClick={() => toggleSection("occasion")}> 
           Occasion
-          <span>{occasion ? <IoChevronUp /> : <IoChevronDown />}</span>
+          <span>{openSections.occasion ? <IoChevronUp /> : <IoChevronDown />}</span>
         </h6>
-        {occasion && (
+        {openSections.occasion && (
           <>
-            <Form.Check label="Anniversary (12)" />
-            <Form.Check label="Birthday (12)" />
-            <Form.Check label="Engagement (12)" />
-            <Form.Check label="Wedding (12)" />
+            {occasionOptions.map((option) => (
+              <Form.Check
+                key={option}
+                label={option}
+                checked={filters.occasions?.includes(option)}
+                onChange={() => handleCheckbox("occasions", option)}
+              />
+            ))}
           </>
         )}
         <hr />
 
-        
-        <h6 onClick={() => setSize(!size)}>
+        <h6 onClick={() => toggleSection("size")}> 
           Size
-          <span>{size ? <IoChevronUp /> : <IoChevronDown />}</span>
+          <span>{openSections.size ? <IoChevronUp /> : <IoChevronDown />}</span>
         </h6>
-        {size && (
+        {openSections.size && (
           <div className="scroll-box">
-            <Form.Check label="6 (12)" />
-            <Form.Check label="6.5 (12)" />
-            <Form.Check label="7 (12)" />
-            <Form.Check label="7.5 (12)" />
-            <Form.Check label="8 (12)" />
-            <Form.Check label="8.5 (12)" />
+            {sizeOptions.map((option) => (
+              <Form.Check
+                key={option}
+                label={option}
+                checked={filters.sizes?.includes(option)}
+                onChange={() => handleCheckbox("sizes", option)}
+              />
+            ))}
           </div>
         )}
       </Card>

@@ -1,85 +1,48 @@
-.filter-box{
- width:400px;
+.filter-box {
+    width: 400px;
+}
+
+.filter-box h5 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.filter-box .card {
+    background: #f8f5ee;
+    border: none;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.filter-box h6 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.filter-box hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 25px 0;
+}
+
+.form-check {
+    margin-bottom: 14px;
+}
+
+.form-check-label {
+    font-size: 15px;
 }
 
 
-.filter-box h5{
- font-weight:600;
- margin-bottom:15px;
-}
+.scroll-box {
+    height: 220px;
+    overflow-y: auto;
+    padding-right: 10px;
 
 
-.filter-box .card{
-
- background:#f8f5ee;
- border:none;
- border-radius:12px;
- padding:20px;
-
-}
-
-
-.filter-box h6{
-
-display:flex;
-justify-content:space-between;
-font-size:18px;
-margin-bottom:15px;
-
-}
-
-
-.filter-box hr{
-
-border:0;
-border-top:1px solid #ccc;
-margin:25px 0;
-
-}
-
-
-.form-check{
-
-margin-bottom:14px;
-
-}
-
-
-.form-check-label{
-
-font-size:15px;
-
-}
-
-
-.scroll-box{
-
-height:220px;
-overflow-y:auto;
-padding-right:10px;
-
-}
-
-
-/* scrollbar */
-
-.scroll-box::-webkit-scrollbar{
-
-width:8px;
-
-}
-
-
-.scroll-box::-webkit-scrollbar-thumb{
-
-background:#999;
-border-radius:10px;
-
-}
-
-
-.scroll-box::-webkit-scrollbar-track{
-
-background:#eee;
-
+    scrollbar-width: thin;
+    scrollbar-color: #999 #eee;
 }

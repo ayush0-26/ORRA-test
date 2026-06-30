@@ -1,4 +1,3 @@
-import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Header.css";
 
@@ -8,39 +7,21 @@ import rose from "../../assets/rosegold.png";
 import white from "../../assets/whitegold.png";
 import diamond from "../../assets/diamond.png";
 
-import {
-  Navbar,
-  Nav,
-  Container,
-  Row,
-  Col,
-  NavDropdown,
-  Dropdown,
-} from "react-bootstrap";
-
-import {
-  FaSearch,
-  FaUser,
-  FaHeart,
-  FaShoppingBag,
-  FaStore,
-} from "react-icons/fa";
+import { Navbar, Nav, Container, Row, Col, NavDropdown, Dropdown } from "react-bootstrap";
+import { FaSearch, FaUser, FaHeart, FaShoppingBag, FaStore } from "react-icons/fa";
 
 const Header = () => {
   return (
     <>
-
+      {/* ── TOP BAR ── */}
       <div className="top-header">
         <Navbar.Brand>
-          <img src={logo} alt="Logo" className="logo img-fluid" />
+          <img src={logo} alt="ORRA Logo" className="logo img-fluid" />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
         <div className="search-box">
           <FaSearch />
-          <input
-            type="text"
-            placeholder="Search for Diamond rings ..."
-          />
+          <input type="text" placeholder="Search for Diamond rings ..." />
         </div>
 
         <div className="icons">
@@ -48,301 +29,281 @@ const Header = () => {
             <FaStore />
             <span>Find a Store</span>
           </div>
-
-          <FaUser />
-          <FaHeart />
-          <FaShoppingBag />
+          <div><FaUser /><span>Login</span></div>
+          <div><FaHeart /><span>Wishlist</span></div>
+          <div><FaShoppingBag /><span>Cart</span></div>
         </div>
       </div>
 
-
+      {/* ── NAV MENU ── */}
       <Navbar expand="lg" className="menu">
         <Container>
-
-
-
-
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Toggle aria-controls="main-navbar" />
+          <Navbar.Collapse id="main-navbar">
             <Nav className="mx-auto">
 
-
-              <NavDropdown
-                title="Diamond"
-                className="mega-dropdown"
-                autoClose="outside"
-              >
+              {/* DIAMOND */}
+              <NavDropdown title="Diamond" className="mega-dropdown" autoClose="outside">
                 <div className="mega-menu">
                   <Row>
                     <Col md={3}>
                       <h6>CATEGORY</h6>
                       <hr />
-
-                      <Dropdown.Item>All Jewellery</Dropdown.Item>
-                      <Dropdown.Item>Necklaces</Dropdown.Item>
-                      <Dropdown.Item>Earrings</Dropdown.Item>
-                      <Dropdown.Item>Pendants</Dropdown.Item>
-                      <Dropdown.Item>Necklace Sets</Dropdown.Item>
-                      <Dropdown.Item>Nosewear</Dropdown.Item>
+                      <Dropdown.Item href="#">All Jewellery</Dropdown.Item>
+                      <Dropdown.Item href="#">Necklaces</Dropdown.Item>
+                      <Dropdown.Item href="#">Earrings</Dropdown.Item>
+                      <Dropdown.Item href="#">Pendants</Dropdown.Item>
+                      <Dropdown.Item href="#">Necklace Sets</Dropdown.Item>
+                      <Dropdown.Item href="#">Nosewear</Dropdown.Item>
                     </Col>
-
                     <Col md={3} className="mt-md-4">
-                      <Dropdown.Item>Bangles</Dropdown.Item>
-                      <Dropdown.Item>Rings</Dropdown.Item>
-                      <Dropdown.Item>Bracelets</Dropdown.Item>
-                      <Dropdown.Item>Pendant Sets</Dropdown.Item>
-                      <Dropdown.Item>Mangalsutra</Dropdown.Item>
+                      <Dropdown.Item href="#">Bangles</Dropdown.Item>
+                      <Dropdown.Item href="#">Rings</Dropdown.Item>
+                      <Dropdown.Item href="#">Bracelets</Dropdown.Item>
+                      <Dropdown.Item href="#">Pendant Sets</Dropdown.Item>
+                      <Dropdown.Item href="#">Mangalsutra</Dropdown.Item>
+                      <Dropdown.Item href="#">Chains</Dropdown.Item>
+                      <Dropdown.Item href="#">For Men</Dropdown.Item>
                     </Col>
-
                     <Col md={3}>
                       <h6>SHOP BY METAL COLOUR</h6>
                       <hr />
-
-                      <Dropdown.Item>
-                        <img src={yellow} alt="Yellow Gold" />
-                        YELLOW GOLD
-                      </Dropdown.Item>
-
-                      <Dropdown.Item>
-                        <img src={rose} alt="Rose Gold" />
-                        ROSE GOLD
-                      </Dropdown.Item>
-
-                      <Dropdown.Item>
-                        <img src={white} alt="White Gold" />
-                        WHITE GOLD
-                      </Dropdown.Item>
-
+                      <Dropdown.Item href="#"><img src={yellow} alt="Yellow Gold" />YELLOW GOLD</Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={rose} alt="Rose Gold" />ROSE GOLD</Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={white} alt="White Gold" />WHITE GOLD</Dropdown.Item>
                       <h6 className="mt-3">SHOP BY STONE</h6>
                       <hr />
-
-                      <Dropdown.Item>
-                        <img src={diamond} alt="Diamond" />
-                        DIAMOND
-                      </Dropdown.Item>
-
-                      <Dropdown.Item>
-                        <img src={diamond} alt="Solitaire" />
-                        SOLITAIRE
-                      </Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={diamond} alt="Diamond" />DIAMOND</Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={diamond} alt="Solitaire" />SOLITAIRE</Dropdown.Item>
                     </Col>
-
                     <Col md={3}>
                       <h6>SHOP BY GENDER</h6>
                       <hr />
-
-                      <Dropdown.Item>WOMEN</Dropdown.Item>
-                      <Dropdown.Item>MEN</Dropdown.Item>
-
+                      <Dropdown.Item href="#">WOMEN</Dropdown.Item>
+                      <Dropdown.Item href="#">MEN</Dropdown.Item>
                       <h6 className="mt-3">SHOP BY PRICE RANGE</h6>
                       <hr />
-
-                      <Dropdown.Item>10K-20K</Dropdown.Item>
-                      <Dropdown.Item>20K-50K</Dropdown.Item>
-                      <Dropdown.Item>ABOVE 50K</Dropdown.Item>
+                      <Dropdown.Item href="#">10K - 20K</Dropdown.Item>
+                      <Dropdown.Item href="#">20K - 50K</Dropdown.Item>
+                      <Dropdown.Item href="#">ABOVE 50K</Dropdown.Item>
                     </Col>
                   </Row>
                 </div>
               </NavDropdown>
 
+              {/* PLATINUM */}
+              <NavDropdown title="Platinum" className="mega-dropdown" autoClose="outside">
+                <div className="mega-menu">
+                  <Row>
+                    <Col md={3}>
+                      <h6>CATEGORY</h6>
+                      <hr />
+                      <Dropdown.Item href="#">Bracelets</Dropdown.Item>
+                      <Dropdown.Item href="#">Bangles</Dropdown.Item>
+                      <Dropdown.Item href="#">Pendant Set</Dropdown.Item>
+                      <Dropdown.Item href="#">Earrings</Dropdown.Item>
+                      <Dropdown.Item href="#">Necklaces</Dropdown.Item>
+                    </Col>
+                    <Col md={3} className="mt-md-4">
+                      <Dropdown.Item href="#">Chains</Dropdown.Item>
+                      <Dropdown.Item href="#">Rings</Dropdown.Item>
+                      <Dropdown.Item href="#">Nosewear</Dropdown.Item>
+                      <Dropdown.Item href="#">Pendants</Dropdown.Item>
+                    </Col>
+                    <Col md={3}>
+                      <h6>SHOP BY METAL COLOUR</h6>
+                      <hr />
+                      <Dropdown.Item href="#"><img src={yellow} alt="Yellow Gold" />YELLOW GOLD</Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={rose} alt="Rose Gold" />ROSE GOLD</Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={white} alt="White Gold" />WHITE GOLD</Dropdown.Item>
+                      <h6 className="mt-3">SHOP BY STONE</h6>
+                      <hr />
+                      <Dropdown.Item href="#"><img src={diamond} alt="Diamond" />DIAMOND</Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={diamond} alt="Solitaire" />SOLITAIRE</Dropdown.Item>
+                    </Col>
+                    <Col md={3}>
+                      <h6>SHOP BY GENDER</h6>
+                      <hr />
+                      <Dropdown.Item href="#">WOMEN</Dropdown.Item>
+                      <Dropdown.Item href="#">MEN</Dropdown.Item>
+                      <h6 className="mt-3">SHOP BY PRICE RANGE</h6>
+                      <hr />
+                      <Dropdown.Item href="#">10K - 20K</Dropdown.Item>
+                      <Dropdown.Item href="#">20K - 50K</Dropdown.Item>
+                      <Dropdown.Item href="#">ABOVE 50K</Dropdown.Item>
+                    </Col>
+                  </Row>
+                </div>
+              </NavDropdown>
 
-              <NavDropdown
-                title="Platinum"
-                className="mega-dropdown"
-                autoClose="outside"
-              >
+              {/* RINGS */}
+              <NavDropdown title="Rings" className="mega-dropdown" autoClose="outside">
+                <div className="mega-menu">
+                  <Row>
+                    <Col md={3}>
+                      <h6>CATEGORY</h6>
+                      <hr />
+                      <Dropdown.Item href="#">All Rings</Dropdown.Item>
+                      <Dropdown.Item href="#">Engagement Rings</Dropdown.Item>
+                      <Dropdown.Item href="#">Wedding Bands</Dropdown.Item>
+                      <Dropdown.Item href="#">Solitaire Rings</Dropdown.Item>
+                      <Dropdown.Item href="#">Cocktail Rings</Dropdown.Item>
+                      <Dropdown.Item href="#">Eternity Rings</Dropdown.Item>
+                    </Col>
+                    <Col md={3} className="mt-md-4">
+                      <Dropdown.Item href="#">Statement Rings</Dropdown.Item>
+                      <Dropdown.Item href="#">Couple Rings</Dropdown.Item>
+                      <Dropdown.Item href="#">Stackable Rings</Dropdown.Item>
+                      <Dropdown.Item href="#">Men's Rings</Dropdown.Item>
+                      <Dropdown.Item href="#">Noserings</Dropdown.Item>
+                    </Col>
+                    <Col md={3}>
+                      <h6>SHOP BY METAL COLOUR</h6>
+                      <hr />
+                      <Dropdown.Item href="#"><img src={yellow} alt="Yellow Gold" />YELLOW GOLD</Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={rose} alt="Rose Gold" />ROSE GOLD</Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={white} alt="White Gold" />WHITE GOLD</Dropdown.Item>
+                      <h6 className="mt-3">SHOP BY STONE</h6>
+                      <hr />
+                      <Dropdown.Item href="#"><img src={diamond} alt="Diamond" />DIAMOND</Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={diamond} alt="Solitaire" />SOLITAIRE</Dropdown.Item>
+                    </Col>
+                    <Col md={3}>
+                      <h6>SHOP BY GENDER</h6>
+                      <hr />
+                      <Dropdown.Item href="#">WOMEN</Dropdown.Item>
+                      <Dropdown.Item href="#">MEN</Dropdown.Item>
+                      <h6 className="mt-3">SHOP BY PRICE RANGE</h6>
+                      <hr />
+                      <Dropdown.Item href="#">10K - 20K</Dropdown.Item>
+                      <Dropdown.Item href="#">20K - 50K</Dropdown.Item>
+                      <Dropdown.Item href="#">ABOVE 50K</Dropdown.Item>
+                    </Col>
+                  </Row>
+                </div>
+              </NavDropdown>
+
+              {/* EARRINGS */}
+              <NavDropdown title="Earrings" className="mega-dropdown" autoClose="outside">
+                <div className="mega-menu">
+                  <Row>
+                    <Col md={3}>
+                      <h6>CATEGORY</h6>
+                      <hr />
+                      <Dropdown.Item href="#">Studs</Dropdown.Item>
+                      <Dropdown.Item href="#">Danglers</Dropdown.Item>
+                      <Dropdown.Item href="#">Hoops</Dropdown.Item>
+                      <Dropdown.Item href="#">Drop Earrings</Dropdown.Item>
+                      <Dropdown.Item href="#">Chandbalis</Dropdown.Item>
+                      <Dropdown.Item href="#">Ear Cuffs</Dropdown.Item>
+                    </Col>
+                    <Col md={3} className="mt-md-4">
+                      <Dropdown.Item href="#">Jhumkas</Dropdown.Item>
+                      <Dropdown.Item href="#">Solitaire Studs</Dropdown.Item>
+                      <Dropdown.Item href="#">Cluster Earrings</Dropdown.Item>
+                      <Dropdown.Item href="#">For Men</Dropdown.Item>
+                    </Col>
+                    <Col md={3}>
+                      <h6>SHOP BY METAL COLOUR</h6>
+                      <hr />
+                      <Dropdown.Item href="#"><img src={yellow} alt="Yellow Gold" />YELLOW GOLD</Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={rose} alt="Rose Gold" />ROSE GOLD</Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={white} alt="White Gold" />WHITE GOLD</Dropdown.Item>
+                      <h6 className="mt-3">SHOP BY STONE</h6>
+                      <hr />
+                      <Dropdown.Item href="#"><img src={diamond} alt="Diamond" />DIAMOND</Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={diamond} alt="Solitaire" />SOLITAIRE</Dropdown.Item>
+                    </Col>
+                    <Col md={3}>
+                      <h6>SHOP BY GENDER</h6>
+                      <hr />
+                      <Dropdown.Item href="#">WOMEN</Dropdown.Item>
+                      <Dropdown.Item href="#">MEN</Dropdown.Item>
+                      <h6 className="mt-3">SHOP BY PRICE RANGE</h6>
+                      <hr />
+                      <Dropdown.Item href="#">10K - 20K</Dropdown.Item>
+                      <Dropdown.Item href="#">20K - 50K</Dropdown.Item>
+                      <Dropdown.Item href="#">ABOVE 50K</Dropdown.Item>
+                    </Col>
+                  </Row>
+                </div>
+              </NavDropdown>
+
+              {/* NECKLACE SETS */}
+              <NavDropdown title="Necklace Sets" className="mega-dropdown" autoClose="outside">
+                <div className="mega-menu">
+                  <Row>
+                    <Col md={3}>
+                      <h6>CATEGORY</h6>
+                      <hr />
+                      <Dropdown.Item href="#">All Necklace Sets</Dropdown.Item>
+                      <Dropdown.Item href="#">Chokers</Dropdown.Item>
+                      <Dropdown.Item href="#">Layered Sets</Dropdown.Item>
+                      <Dropdown.Item href="#">Pendant Sets</Dropdown.Item>
+                      <Dropdown.Item href="#">Tanmaniya Sets</Dropdown.Item>
+                      <Dropdown.Item href="#">Bridal Sets</Dropdown.Item>
+                    </Col>
+                    <Col md={3} className="mt-md-4">
+                      <Dropdown.Item href="#">Statement Sets</Dropdown.Item>
+                      <Dropdown.Item href="#">Everyday Sets</Dropdown.Item>
+                      <Dropdown.Item href="#">Mangalsutra Sets</Dropdown.Item>
+                    </Col>
+                    <Col md={3}>
+                      <h6>SHOP BY METAL COLOUR</h6>
+                      <hr />
+                      <Dropdown.Item href="#"><img src={yellow} alt="Yellow Gold" />YELLOW GOLD</Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={rose} alt="Rose Gold" />ROSE GOLD</Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={white} alt="White Gold" />WHITE GOLD</Dropdown.Item>
+                      <h6 className="mt-3">SHOP BY STONE</h6>
+                      <hr />
+                      <Dropdown.Item href="#"><img src={diamond} alt="Diamond" />DIAMOND</Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={diamond} alt="Solitaire" />SOLITAIRE</Dropdown.Item>
+                    </Col>
+                    <Col md={3}>
+                      <h6>SHOP BY GENDER</h6>
+                      <hr />
+                      <Dropdown.Item href="#">WOMEN</Dropdown.Item>
+                      <Dropdown.Item href="#">MEN</Dropdown.Item>
+                      <h6 className="mt-3">SHOP BY PRICE RANGE</h6>
+                      <hr />
+                      <Dropdown.Item href="#">10K - 20K</Dropdown.Item>
+                      <Dropdown.Item href="#">20K - 50K</Dropdown.Item>
+                      <Dropdown.Item href="#">ABOVE 50K</Dropdown.Item>
+                    </Col>
+                  </Row>
+                </div>
+              </NavDropdown>
+
+              {/* EVERYDAY ESSENTIALS */}
+              <NavDropdown title="Everyday Essentials" className="mega-dropdown" autoClose="outside">
                 <div className="mega-menu">
                   <Row>
                     <Col md={4}>
-                      <h6>CATEGORY</h6>
+                      <h6>SHOP BY CATEGORY</h6>
                       <hr />
-
-                      <Dropdown.Item>Bangles</Dropdown.Item>
-                      <Dropdown.Item>Rings</Dropdown.Item>
-                      <Dropdown.Item>Bracelets</Dropdown.Item>
-                      <Dropdown.Item>Pendant Sets</Dropdown.Item>
-                      <Dropdown.Item>Mangalsutra</Dropdown.Item>
+                      <Dropdown.Item href="#">Rings</Dropdown.Item>
+                      <Dropdown.Item href="#">Earrings</Dropdown.Item>
+                      <Dropdown.Item href="#">Pendants</Dropdown.Item>
+                      <Dropdown.Item href="#">Necklaces</Dropdown.Item>
+                      <Dropdown.Item href="#">Bracelets</Dropdown.Item>
+                      <Dropdown.Item href="#">Bangles</Dropdown.Item>
                     </Col>
-
-                    <Col md={4}>
-                      <h6>MORE</h6>
-                      <hr />
-
-                      <Dropdown.Item>Chains</Dropdown.Item>
-                      <Dropdown.Item>Pendants</Dropdown.Item>
-                      <Dropdown.Item>Earrings</Dropdown.Item>
-                    </Col>
-
-                    <Col md={4}>
-                      <h6>SHOP BY GENDER</h6>
-                      <hr />
-
-                      <Dropdown.Item>WOMEN</Dropdown.Item>
-                      <Dropdown.Item>MEN</Dropdown.Item>
-
-                      <h6 className="mt-3">SHOP BY PRICE RANGE</h6>
-                      <hr />
-
-                      <Dropdown.Item>10K-20K</Dropdown.Item>
-                      <Dropdown.Item>20K-50K</Dropdown.Item>
-                      <Dropdown.Item>ABOVE 50K</Dropdown.Item>
-                    </Col>
-                  </Row>
-                </div>
-              </NavDropdown>
-
-              {/* Rings */}
-              <NavDropdown
-                title="Rings"
-                className="mega-dropdown"
-                autoClose="outside"
-              >
-                <div className="two-col-dropdown">
-                  <Row>
-
                     <Col md={4}>
                       <h6>SHOP BY METAL COLOUR</h6>
                       <hr />
-
-                      <Dropdown.Item>
-                        <img src={yellow} />
-                        YELLOW GOLD
-                      </Dropdown.Item>
-
-                      <Dropdown.Item>
-                        <img src={rose} />
-                        ROSE GOLD
-                      </Dropdown.Item>
-
-                      <Dropdown.Item>
-                        <img src={white} />
-                        WHITE GOLD
-                      </Dropdown.Item>
-                      <h6>SHOP BY STONE</h6>
-                      <hr />
-
-                      <Dropdown.Item>
-                        <img src={diamond} />
-                        DIAMOND
-                      </Dropdown.Item>
-
-                      <Dropdown.Item>
-                        <img src={diamond} />
-                        SOLITAIRE
-                      </Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={yellow} alt="Yellow Gold" />YELLOW GOLD</Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={rose} alt="Rose Gold" />ROSE GOLD</Dropdown.Item>
+                      <Dropdown.Item href="#"><img src={white} alt="White Gold" />WHITE GOLD</Dropdown.Item>
                     </Col>
-
-
-
-
-
                     <Col md={4}>
                       <h6>SHOP BY PRICE RANGE</h6>
                       <hr />
-
-                      <Dropdown.Item>10K-20K</Dropdown.Item>
-                      <Dropdown.Item>20K-50K</Dropdown.Item>
-                      <Dropdown.Item>ABOVE 50K</Dropdown.Item>
-                    </Col>
-
-                  </Row>
-                </div>
-              </NavDropdown>
-
-              {/* Earrings */}
-              <NavDropdown
-                title="Earrings"
-                className="mega-dropdown"
-                autoClose="outside"
-              >
-                <div className="two-col-dropdown">
-                  <Row>
-                    <Col md={6}>
-                      <h6>SHOP BY METAL COLOUR</h6>
-                      <hr />
-
-                      <Dropdown.Item>
-                        <img src={yellow} alt="Yellow Gold" />
-                        YELLOW GOLD
-                      </Dropdown.Item>
-
-                      <Dropdown.Item>
-                        <img src={rose} alt="Rose Gold" />
-                        ROSE GOLD
-                      </Dropdown.Item>
-
-                      <Dropdown.Item>
-                        <img src={white} alt="White Gold" />
-                        WHITE GOLD
-                      </Dropdown.Item>
-                    </Col>
-
-                    <Col md={6}>
-                      <h6>SHOP BY STONE</h6>
-                      <hr />
-
-                      <Dropdown.Item>
-                        <img src={diamond} alt="Diamond" />
-                        DIAMOND
-                      </Dropdown.Item>
-
-                      <Dropdown.Item>
-                        <img src={diamond} alt="Solitaire" />
-                        SOLITAIRE
-                      </Dropdown.Item>
+                      <Dropdown.Item href="#">10K - 20K</Dropdown.Item>
+                      <Dropdown.Item href="#">20K - 50K</Dropdown.Item>
+                      <Dropdown.Item href="#">ABOVE 50K</Dropdown.Item>
                     </Col>
                   </Row>
                 </div>
-              </NavDropdown>
-
-              {/* Necklace Sets */}
-              <NavDropdown
-                title="Necklace Sets"
-                className="mega-dropdown"
-                autoClose="outside"
-              >
-                <div className="two-col-dropdown">
-                  <Row>
-                    <Col md={6}>
-                      <h6>SHOP BY METAL COLOUR</h6>
-                      <hr />
-
-                      <Dropdown.Item>
-                        <img src={yellow} alt="Yellow Gold" />
-                        YELLOW GOLD
-                      </Dropdown.Item>
-
-                      <Dropdown.Item>
-                        <img src={rose} alt="Rose Gold" />
-                        ROSE GOLD
-                      </Dropdown.Item>
-
-                      <Dropdown.Item>
-                        <img src={white} alt="White Gold" />
-                        WHITE GOLD
-                      </Dropdown.Item>
-                    </Col>
-
-                    <Col md={6}>
-                      <h6>SHOP BY PRICE RANGE</h6>
-                      <hr />
-
-                      <Dropdown.Item>10K-20K</Dropdown.Item>
-                      <Dropdown.Item>20K-50K</Dropdown.Item>
-                      <Dropdown.Item>ABOVE 50K</Dropdown.Item>
-                    </Col>
-                  </Row>
-                </div>
-              </NavDropdown>
-
-              {/* Everyday Essentials */}
-              <NavDropdown title="Everyday Essentials"
-               autoClose="outside">
-                <div className="everyday-menu d-flex justify-content-between">
-                  <Dropdown.Item>Rings</Dropdown.Item>
-                  <Dropdown.Item>Necklaces</Dropdown.Item>
-                  <Dropdown.Item>Earrings</Dropdown.Item>
-                </div>
-
               </NavDropdown>
 
             </Nav>
