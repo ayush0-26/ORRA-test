@@ -1,5 +1,6 @@
 .filter-box {
-    width: 400px;
+    width: 100%; /* Fix width hataya, auto scale wrapper context */
+    max-width: 400px;
 }
 
 .filter-box h5 {
@@ -7,42 +8,59 @@
     margin-bottom: 15px;
 }
 
+
 .filter-box .card {
     background: #f8f5ee;
     border: none;
     border-radius: 12px;
     padding: 20px;
+    margin: 0px !important; 
+}
+
+
+.mobile-filter-offcanvas .filter-box .card {
+    background: transparent !important;
+    border-radius: 0;
+    padding: 15px;
+}
+.mobile-filter-offcanvas .filter-box h5 {
+    display: none; 
 }
 
 .filter-box h6 {
     display: flex;
     justify-content: space-between;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 600;
     margin-bottom: 15px;
     cursor: pointer;
+    color: #222;
 }
 
 .filter-box hr {
     border: 0;
-    border-top: 1px solid #ccc;
-    margin: 25px 0;
+    border-top: 1px solid #e2ded5;
+    margin: 18px 0;
 }
 
 .form-check {
-    margin-bottom: 14px;
+    margin-bottom: 12px;
+}
+
+.form-check-input:checked {
+    background-color: #000; 
+    border-color: #000;
 }
 
 .form-check-label {
-    font-size: 15px;
+    font-size: 14px;
+    color: #444;
 }
 
-
 .scroll-box {
-    height: 220px;
+    height: 180px;
     overflow-y: auto;
     padding-right: 10px;
-
-
     scrollbar-width: thin;
     scrollbar-color: #999 #eee;
 }

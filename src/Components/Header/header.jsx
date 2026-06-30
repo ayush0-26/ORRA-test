@@ -10,7 +10,8 @@ import diamond from "../../assets/diamond.png";
 import { Navbar, Nav, Container, Row, Col, NavDropdown, Dropdown } from "react-bootstrap";
 import { FaSearch, FaUser, FaHeart, FaShoppingBag, FaStore } from "react-icons/fa";
 
-const Header = () => {
+// Header receives searchQuery (current text) and onSearchChange (updater) from App
+const Header = ({ searchQuery, onSearchChange }) => {
   return (
     <>
       {/* ── TOP BAR ── */}
@@ -21,7 +22,13 @@ const Header = () => {
 
         <div className="search-box">
           <FaSearch />
-          <input type="text" placeholder="Search for Diamond rings ..." />
+          {/* Controlled input — value is driven by state in App.jsx */}
+          <input
+            type="text"
+            placeholder="Search for Diamond rings ..."
+            value={searchQuery}
+            onChange={(e) => onSearchChange(e.target.value)}
+          />
         </div>
 
         <div className="icons">
@@ -29,9 +36,9 @@ const Header = () => {
             <FaStore />
             <span>Find a Store</span>
           </div>
-          <div><FaUser /><span>Login</span></div>
-          <div><FaHeart /><span>Wishlist</span></div>
-          <div><FaShoppingBag /><span>Cart</span></div>
+          <div><FaUser /></div>
+          <div><FaHeart /></div>
+          <div><FaShoppingBag /></div>
         </div>
       </div>
 
